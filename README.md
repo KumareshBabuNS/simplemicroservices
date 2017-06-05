@@ -1,5 +1,5 @@
 # Simple Microservices
-This is very simple microservices using Spring cloud Netflix Eureka and Service Discovery.
+This is very simple microservices using Spring cloud Netflix Eureka and Service Discovery. This project is for beginners who willing to start learning Microservices using Spring Boot.
 
 # WebUIEurekaClientApplication
 It will serve as simple web ui to prompt for username and password. 
