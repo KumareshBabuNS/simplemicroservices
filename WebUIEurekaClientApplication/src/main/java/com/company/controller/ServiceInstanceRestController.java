@@ -12,7 +12,7 @@ import com.company.service.StoreDataService;
 import com.company.user.User;
 
 @RestController
-public class ServiceInstanceRestController {
+public class WebUIController {
 
 	@Autowired
 	StoreDataService storeDataService;
