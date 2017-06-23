@@ -9,14 +9,17 @@ import com.company.user.User;
 @Service
 public class StoreDataService {
 
-	//private static final String storeDataURL = "http://localhost:3333/register";
-	private static final String storeDataURL = "http://localhost:4444/register";
+	@Autowired
+	private EurekaClient eurekaClient;
 	
 	@Autowired
-	private RestTemplate restTemplate;
+	private RestTemplateBuilder restTemplateBuilder;
 	
 	public String storeData(User user){
-		String status = restTemplate.postForObject(storeDataURL.toString(), user, String.class);
+		RestTemplate restTemplate = new restTemplateBuilder.build();
+		InstanceInfo instanceInfo = client.getNextServerFromEureka("backend", false);
+		String url = instanceInfo.getHomePageUrl();
+		String status = restTemplate.postForObject(url + "/register", user, String.class);
 		return status;
 	}
 	
