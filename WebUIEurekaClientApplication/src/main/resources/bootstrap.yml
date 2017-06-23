@@ -6,4 +6,4 @@ server:
   port: 2222
 spring:
   application:
-    name: Web UI App
+    name: webui
