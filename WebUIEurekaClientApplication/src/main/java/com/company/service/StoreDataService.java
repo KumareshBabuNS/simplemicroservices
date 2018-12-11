@@ -17,7 +17,7 @@ public class StoreDataService {
 	
 	public String storeData(User user){
 		RestTemplate restTemplate = new restTemplateBuilder.build();
-		InstanceInfo instanceInfo = client.getNextServerFromEureka("backend", false);
+		InstanceInfo instanceInfo = eurekaClient.getNextServerFromEureka("backend", false);
 		String url = instanceInfo.getHomePageUrl();
 		String status = restTemplate.postForObject(url + "/register", user, String.class);
 		return status;
